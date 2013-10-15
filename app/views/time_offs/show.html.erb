@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date from:</strong>
+  <%= @time_off.date_from %>
+</p>
+
+<p>
+  <strong>Date to:</strong>
+  <%= @time_off.date_to %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @time_off.reason %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @time_off.employee.first_name %>
+</p>
+
+<%= link_to 'Edit', edit_employee_time_off_path(@employee, @time_off) %> |
+<%= link_to 'Back', employee_time_offs_path %>
