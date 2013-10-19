@@ -19,9 +19,10 @@
       <tr>
         <td><%= time_off.date_from %></td>
         <td><%= time_off.date_to %></td>
-        <td><%= time_off.time_off_in_days %></td>
+        <td><%= time_off.get_day_off %></td>
         <td><%= time_off.reason %></td>
         <td><%= time_off.employee.first_name %> <%= time_off.employee.last_name %></td>
+        <td><%= time_off.do_we_have_limit? %></td>
         <td><%= link_to 'Show', [@employee, time_off] %></td>
         <td><%= link_to 'Edit', edit_employee_time_off_path(@employee, time_off) %></td>
         <td><%= link_to 'Destroy', [@employee, time_off], method: :delete, data: { confirm: 'Are you sure?' } %></td>

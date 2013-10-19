@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015193348) do
+ActiveRecord::Schema.define(version: 20131017100407) do
 
   create_table "employees", force: true do |t|
     t.string   "first_name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20131015193348) do
     t.string   "emial"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "holiday_off_limit"
+    t.integer  "holiday_off_limit_used"
   end
 
   create_table "time_offs", force: true do |t|
@@ -28,6 +30,7 @@ ActiveRecord::Schema.define(version: 20131015193348) do
     t.integer  "employee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "day_off"
   end
 
 end

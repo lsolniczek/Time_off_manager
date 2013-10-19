@@ -24,23 +24,19 @@ class TimeOffsController < ApplicationController
   def create
     @time_off = @employee.time_offs.new(time_off_params)
 
-    respond_to do |format|
-      if @time_off.save
-        format.html { redirect_to [@employee, @time_off], notice: 'Time off was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @time_off.save
+      redirect_to [@employee, @time_off], notice: 'Time off was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   
   def update
-    respond_to do |format|
-      if @time_off.update(time_off_params)
-        format.html { redirect_to @time_off, notice: 'Time off was successfully updated.' }
-      else
-        render action: 'edit' 
-      end
+    if @time_off.update(time_off_params)
+      redirect_to [@employee, @time_off], notice: 'Time off was successfully updated.'
+    else
+      render action: 'edit' 
     end
   end
 
