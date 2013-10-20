@@ -1,32 +1,36 @@
-<%= form_for([@employee, @time_off]) do |f| %>
-  <% if @time_off.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@time_off.errors.count, "error") %> prohibited this time_off from being saved:</h2>
+<div class="row">  
+  <div class="col-md-5">
+    <%= form_for([@employee, @time_off]) do |f| %>
+      <% if @time_off.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@time_off.errors.count, "error") %> prohibited this time_off from being saved:</h2>
 
-      <ul>
-      <% @time_off.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <ul>
+          <% @time_off.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :date_from %><br>
-    <%= f.date_select :date_from %>
+      <div class="form-group">
+        <%= f.label :date_from, "Od kiedy" %><br>
+        <%= f.date_select :date_from, :class=>"form-control input-sm" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :date_to, "Do kiedy" %><br>
+        <%= f.date_select :date_to, :class=>"form-control input-sm" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :reason, "Powód" %><br>
+        <%= f.text_area :reason, :class=>"form-control input-sm" %>
+      </div>
+      <div class="form-group">
+        <%= f.hidden_field :employee %>
+      </div>
+      <div class="actions">
+        <%= f.submit "OK", :class=>"btn btn-success" %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :date_to %><br>
-    <%= f.date_select :date_to %>
-  </div>
-  <div class="field">
-    <%= f.label :reason %><br>
-    <%= f.text_area :reason %>
-  </div>
-  <div class="field">
-    <%= f.hidden_field :employee %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>    

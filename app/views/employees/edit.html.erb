@@ -1,6 +1,7 @@
-<h1>Editing employee</h1>
+<h1><%= link_to image_tag("back.png", :border => 0, :width => 16, :height => 16), employees_path, :style => "margin-left: 10px" %> 
+	<%= @employee %>
+</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @employee %> |
-<%= link_to 'Back', employees_path %>
+

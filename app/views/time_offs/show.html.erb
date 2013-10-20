@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Date from:</strong>
-  <%= @time_off.date_from %>
-</p>
-
-<p>
-  <strong>Date to:</strong>
-  <%= @time_off.date_to %>
-</p>
-
-<p>
-  <strong>Reason:</strong>
-  <%= @time_off.reason %>
-</p>
-
-<p>
-  <strong>Employee:</strong>
-  <%= @time_off.employee.first_name %>
-</p>
-
-<%= link_to 'Edit', edit_employee_time_off_path(@employee, @time_off) %> |
-<%= link_to 'Back', employee_time_offs_path %>
+<h1><%= link_to image_tag("back.png", :border => 0, :width => 16, :height => 16), employee_time_offs_path, :style => "margin-left: 10px" %> 
+	Dni wolne dla <%= @employee %> 
+	<%= link_to image_tag("notebook.png", :border => 0, :width => 16, :height => 16), edit_employee_time_off_path(@employee, @time_off) %>
+</h1>
+<div class="row">
+	<div class="col-md-12">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+			  <label class="control-label col-lg-2">Od kiedy:</label>
+			  <div class="col-lg-10">
+			  	<p class="form-control-static"><%= @time_off.date_from %></p>
+			  </div>	
+			</div>
+			<div class="form-group">
+			  <label class="control-label col-lg-2">Do kiedy:</label>
+			  <div class="col-lg-10">
+			  	<p class="form-control-static"><%= @time_off.date_to %></p>
+			  </div>	
+			</div>
+			<div class="form-group">
+			  <label class="control-label col-lg-2">Powód:</label>
+			  <div class="col-lg-10">
+			  	<p class="form-control-static"><%= @time_off.reason %></p>
+			  </div>	
+			</div>
+		</form>	
+	</div>
+</div>		

@@ -1,36 +1,42 @@
-<h1>Listing employees</h1>
+<h1>Pracownicy</h1>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+          <th>Adres emial</th>
+          <th>Ilość wolnych dni</th>
+          <th>Ilość wykorzystanych dni</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Emial</th>
-      <th>Day limit</th>
-      <th>Day used</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.first_name %></td>
+            <td><%= employee.last_name %></td>
+            <td><%= employee.emial %></td>
+            <td><%= employee.holiday_off_limit %></td>
+            <td><%= employee.get_holiday_off_limit_used %></td>
+            <td><%= link_to image_tag("magnifier.png", :border => 0, :width => 12, :height => 12), employee %></td>
+            <td><%= link_to image_tag("notebook.png", :border => 0, :width => 12, :height => 12), edit_employee_path(employee) %></td>
+            <td><%= link_to image_tag("cross.png", :border => 0, :width => 12, :height => 12), employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to image_tag("smiley.png", :border => 0, :width => 12, :height => 12),  employee_time_offs_path(employee)%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+</div>
 
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.first_name %></td>
-        <td><%= employee.last_name %></td>
-        <td><%= employee.emial %></td>
-        <td><%= employee.holiday_off_limit %></td>
-        <td><%= employee.get_holiday_off_limit_used %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Time Offs',  employee_time_offs_path(employee)%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Employee', new_employee_path %>
+<div class="row">
+  <div class="col-md-1">
+    <%= link_to image_tag("plus.png"), new_employee_path, :style => "margin-left: 10px;" %>
+  </div>  
+</div>

@@ -1,6 +1,6 @@
-<h1>Editing time_off</h1>
+<h1><%= link_to image_tag("back.png", :border => 0, :width => 16, :height => 16), employee_time_offs_path, :style => "margin-left: 10px" %> 
+	Edycja dni wolnych dla <%= @employee %>
+	<%= link_to image_tag("magnifier.png", :border => 0, :width => 16, :height => 16), [@employee, @time_off], :style => "margin-left: 10px" %>
+</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', [@employee, @time_off] %> |
-<%= link_to 'Back', employee_time_offs_path %>

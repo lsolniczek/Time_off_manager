@@ -1,6 +1,11 @@
 class Employee < ActiveRecord::Base
+	before_create :set_holiday_off_limit_used_to_zero
 	has_many :time_offs
 
+
+	def to_s
+		"#{self.first_name} #{self.last_name}"
+	end
 
 
 	#setter and getter to holiday_off_limit_used
@@ -16,5 +21,9 @@ class Employee < ActiveRecord::Base
 
 	def get_holiday_off_limit_used
 		holiday_off_limit_used
+	end
+
+	def set_holiday_off_limit_used_to_zero
+		self.holiday_off_limit_used = 0
 	end
 end
