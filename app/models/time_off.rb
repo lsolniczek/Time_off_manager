@@ -1,6 +1,6 @@
 class TimeOff < ActiveRecord::Base
 	
-	validate :do_we_have_limit, message: "New vacation overstep a limit, change it!"
+	validate :do_we_have_limit
 	before_save :set_day_off
 	after_save :employee_set_holiday_off_used 
 	after_destroy :employee_set_holiday_off_used 
