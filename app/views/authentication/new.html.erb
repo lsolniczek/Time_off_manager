@@ -1,0 +1,17 @@
+<div class="row">  
+  <div class="col-md-5">
+    <%= form_tag("/login", method: "post") do %>
+      <div class="form-group">
+        <%= label_tag :emial, "Email" %>
+        <%= text_field_tag :emial %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :password, "Hasło" %>
+        <%= password_field_tag :password %>
+      </div>
+      <div class="actions">
+        <%= submit_tag "Potwierdź" %>
+      </div>
+    <% end %>  
+  </div>
+</div>
