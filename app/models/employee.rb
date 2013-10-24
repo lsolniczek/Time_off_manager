@@ -22,6 +22,7 @@ class Employee < ActiveRecord::Base
 	def get_holiday_off_limit_used
 		holiday_off_limit_used
 	end
+<<<<<<< HEAD
 
 	def set_holiday_off_limit_used_to_zero
 		self.holiday_off_limit_used = 0
@@ -31,4 +32,6 @@ class Employee < ActiveRecord::Base
 	def self.authentication(email, password)
     	where("email = ? AND password = ?", email, password).first
   	end
+=======
+>>>>>>> auth
 end

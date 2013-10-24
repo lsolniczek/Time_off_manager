@@ -14,6 +14,10 @@
 		  <strong><%= notice %></strong>
 		</div>
 	<% end %>
+	<% if session[:user].presence %>
+		<div><%= session[:user] %></div>
+		<div><%= link_to "Wyloguj", logout_path, data: { confirm: 'Are you sure?' } %></div>
+	<% end %>
 
 	<%= yield %>
 </div>
