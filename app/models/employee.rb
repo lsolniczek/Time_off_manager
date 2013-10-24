@@ -22,8 +22,4 @@ class Employee < ActiveRecord::Base
 	def get_holiday_off_limit_used
 		holiday_off_limit_used
 	end
-
-	def set_holiday_off_limit_used_to_zero
-		self.holiday_off_limit_used = 0
-	end
 end

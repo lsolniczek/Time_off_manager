@@ -21,31 +21,24 @@ class EmployeesController < ApplicationController
   
   def create
     @employee = Employee.new(employee_params)
-
-    respond_to do |format|
-      if @employee.save
-        format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
-      else
-        format.html { render action: 'new' }
-      end
+    if @employee.save
+      redirect_to @employee, notice: 'Employee was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   def update
-    respond_to do |format|
-      if @employee.update(employee_params)
-        format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
-      else
-        format.html { render action: 'edit' }
-      end
+    if @employee.update(employee_params)
+      redirect_to @employee, notice: 'Employee was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @employee.destroy
-    respond_to do |format|
-      format.html { redirect_to employees_url }
-    end
+      redirect_to employees_url
   end
 
   private
