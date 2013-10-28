@@ -1,6 +1,7 @@
 class TimeOffsController < ApplicationController
   before_action :set_time_off, only: [:show, :edit, :update, :destroy]
-  before_filter :get_employee
+  #before_action :current_user_id_check
+  before_filter :current_user, :get_employee
 
   
   def index
@@ -59,5 +60,22 @@ class TimeOffsController < ApplicationController
 
     def get_employee
       @employee = Employee.find(params[:employee_id])
+    end
+
+    def current_user
+      current_user ||= session[:user]
+
+      unless current_user
+        redirect_to root_path, notice: 'Musisz byc zalogowany.'
+      end
+    end
+
+    def current_user_id_check
+      other_user = params[:employee_id]
+      current_user = session[:user].id
+
+      unless other_user == current_user
+        redirect_to employee_time_offs_path(:employee_id => session[:user].id)
+      end
     end
 end
