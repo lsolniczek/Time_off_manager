@@ -1,6 +1,8 @@
 class TimeOff < ActiveRecord::Base
 	
 	validate :do_we_have_limit
+	validates :day_off, :numericality => {:only_integer => true, :greater_than_or_equal_to => 1}
+
 	before_save :set_day_off
 	after_save :employee_set_holiday_off_used 
 	after_destroy :employee_set_holiday_off_used 
