@@ -1,20 +1,20 @@
 == README
 
-To jest mój drugi projekt w Railsach. Tym razem celem jest napsianie aplikacji do zarz¹dzania urlopami.
+To jest mï¿½j drugi projekt w Railsach. Tym razem celem jest napsianie aplikacji do zarzï¿½dzania urlopami.
 
-Na dzieñ dzisiejszy aplikacja pozwala na:
+Na dzieï¿½ dzisiejszy aplikacja pozwala na:
 
 * dodanie pracownika i ustawienie mu podstawowych danych
 
 * dodanie pracownikowi urlopu + walidacja przekroczenia limitu dni wolnych
 
-W planach do przygotowania:
-
 * logowanie na swoje konto
 
-* przypisanie ról do poszczególnych u¿ytkowników (administartor, pracownik, akceptujacy)
+* przypisanie rï¿½l do poszczegï¿½lnych uï¿½ytkownikï¿½w (administartor, pracownik, akceptujacy)
 
-* przekazanie planowanego urlopu do akceptacji prze³o¿onemu
+W planach do przygotowania:
+
+* przekazanie planowanego urlopu do akceptacji przeï¿½oï¿½onemu
 
 * powiadomienia mailowe
 
