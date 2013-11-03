@@ -1,8 +1,8 @@
 == README
 
-To jest m�j drugi projekt w Railsach. Tym razem celem jest napsianie aplikacji do zarz�dzania urlopami.
+To jest mój drugi projekt w Railsach. Tym razem celem jest napsianie aplikacji do zarzdzania urlopami.
 
-Na dzie� dzisiejszy aplikacja pozwala na:
+Na dzien dzisiejszy aplikacja pozwala na:
 
 * dodanie pracownika i ustawienie mu podstawowych danych
 
@@ -10,11 +10,11 @@ Na dzie� dzisiejszy aplikacja pozwala na:
 
 * logowanie na swoje konto
 
-* przypisanie r�l do poszczeg�lnych u�ytkownik�w (administartor, pracownik, akceptujacy)
+* przypisanie ról do poszczególnych uzytkownikow (administartor, pracownik, akceptujacy)
 
 W planach do przygotowania:
 
-* przekazanie planowanego urlopu do akceptacji prze�o�onemu
+* przekazanie planowanego urlopu do akceptacji przełożonemu
 
 * powiadomienia mailowe
 
