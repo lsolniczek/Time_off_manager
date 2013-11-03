@@ -1,6 +1,10 @@
 class Employee < ActiveRecord::Base
 	before_create :set_holiday_off_limit_used_to_zero
 	has_many :time_offs
+	has_many :employee_roles
+	has_many :roles, :through => :employee_roles
+	
+
 
 
 	def to_s
@@ -27,16 +31,17 @@ class Employee < ActiveRecord::Base
 		self.holiday_off_limit_used = 0
 	end
 
-	#AUTHENTICATION
+	#AUTHENTICATION - Log_in
 	def self.authentication(email, password)
-
-
     	user = find_by("emial = ? AND password = ?", email, password)
-
     	if user
     		user
     	else
     		nil
     	end
+  	end
+
+  	def roles_name
+  		self.roles.map {|r| r.role_name}
   	end
 end

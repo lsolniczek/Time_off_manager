@@ -7,16 +7,16 @@ class AuthenticationController < ApplicationController
 		login_user = Employee.authentication(params[:emial], params[:password])
 
 		if login_user
-			session[:user] = login_user
-			redirect_to employee_time_offs_url(:employee_id => session[:user].id)
+			session[:user_id] = login_user.id
+			redirect_to employee_time_offs_url(:employee_id => session[:user_id])
 		else
 			redirect_to root_url
 		end
 	end
 
 	def destroy
-		if session[:user]
-			session[:user] = nil
+		if session[:user_id]
+			session[:user_id] = nil
 			redirect_to root_url
 		end
 	end

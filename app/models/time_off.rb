@@ -9,8 +9,7 @@ class TimeOff < ActiveRecord::Base
 
 	belongs_to :employee
 	
-
-
+	
 	#setter and getter to day_off
 	def set_day_off
 		self.day_off = (self.date_to - self.date_from).to_i

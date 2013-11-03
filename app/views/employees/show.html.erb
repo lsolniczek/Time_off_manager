@@ -29,6 +29,14 @@
 		        	<p class="form-control-static"><%= @employee.holiday_off_limit %></p>
 		        </div>
 		    </div>
+		    <div class="form-group">
+		        <label class="control-label col-lg-2">Role</label>
+		        <div class="col-lg-10">
+		        	<% @employee.roles.each do |role| %> 
+		        		<p class="form-control-static"><%= role.role_name %></p>
+		        	<% end %>
+		        </div>
+		    </div>
 		</form>
 	</div>	
 </div>

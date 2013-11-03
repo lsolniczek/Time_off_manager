@@ -63,7 +63,7 @@ class TimeOffsController < ApplicationController
     end
 
     def current_user
-      current_user ||= session[:user]
+      current_user ||= session[:user_id]
 
       unless current_user
         redirect_to root_path, notice: 'Musisz byc zalogowany.'
@@ -72,10 +72,10 @@ class TimeOffsController < ApplicationController
 
     def current_user_id_check
       other_user = params[:employee_id]
-      current_user = session[:user].id
+      current_user = session[:user_id]
 
       unless other_user == current_user
-        redirect_to employee_time_offs_path(:employee_id => session[:user].id)
+        redirect_to employee_time_offs_path(:employee_id => session[:user_id])
       end
     end
 end

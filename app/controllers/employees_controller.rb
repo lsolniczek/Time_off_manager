@@ -16,6 +16,7 @@ class EmployeesController < ApplicationController
 
   
   def edit
+    3.times {@employee.roles.build}
   end
 
   
@@ -47,6 +48,6 @@ class EmployeesController < ApplicationController
     end
 
     def employee_params
-      params.require(:employee).permit(:first_name, :last_name, :emial, :holiday_off_limit)
+      params.require(:employee).permit(:first_name, :last_name, :emial, :holiday_off_limit, role_ids:[])
     end
 end
