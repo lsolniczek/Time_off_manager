@@ -33,7 +33,7 @@ class Employee < ActiveRecord::Base
 
 	#AUTHENTICATION - Log_in
 	def self.authentication(email, password)
-    	user = find_by("emial = ? AND password = ?", email, password)
+    	user = find_by("email = ? AND password = ?", email, password)
     	if user
     		user
     	else

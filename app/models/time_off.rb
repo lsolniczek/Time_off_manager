@@ -38,4 +38,13 @@ class TimeOff < ActiveRecord::Base
 			errors.add(:time_off_limit_overstep, ", change it!")
 		end
 	end
+
+
+
+	#STATE MACHINE
+	include AASM
+
+	aasm :column => "state" do 
+			state :new, :initial =>true
+	end
 end

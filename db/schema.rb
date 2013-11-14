@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029205755) do
+ActiveRecord::Schema.define(version: 20131114221013) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "employee_roles", force: true do |t|
     t.integer  "employee_id"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131029205755) do
   create_table "employees", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "emial"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "holiday_off_limit"
@@ -45,6 +48,7 @@ ActiveRecord::Schema.define(version: 20131029205755) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "day_off"
+    t.string   "state"
   end
 
 end

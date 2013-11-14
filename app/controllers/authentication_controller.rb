@@ -4,7 +4,7 @@ class AuthenticationController < ApplicationController
 	end
 
 	def create
-		login_user = Employee.authentication(params[:emial], params[:password])
+		login_user = Employee.authentication(params[:email], params[:password])
 
 		if login_user
 			session[:user_id] = login_user.id

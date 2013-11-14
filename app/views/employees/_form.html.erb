@@ -17,10 +17,13 @@
         <%= f.input :last_name, :label => "Nazwisko", :input_html => { :class => "form-control input-sm"} %>
       </div>
       <div class="form-group">
-        <%= f.input :emial, :label => "Email", :input_html => { :class => "form-control input-sm"} %>
+        <%= f.input :email, :label => "Email", :input_html => { :class => "form-control input-sm"} %>
       </div>
       <div class="form-group">
         <%= f.input :holiday_off_limit, :label => "Ilość wolnych dni", :input_html => { :class => "form-control input-sm"} %> 
+      </div>
+      <div class="form-group">
+        <%= f.input :password, :label => "Hasło", :input_html => { :class => "form-control input-sm"} %> 
       </div>
       <div class="form-group">
         <%= f.input :roles, :label => "Role", :as => :check_boxes, :collection => Role.all %> 
