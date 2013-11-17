@@ -45,6 +45,26 @@ class TimeOff < ActiveRecord::Base
 	include AASM
 
 	aasm :column => "state" do 
-			state :new, :initial =>true
+		state :new, :initial =>true
+		state :in_approval
+		state :accepted
+		state :rejected
+		state :canceled
+
+		event :change do
+			transitions :form => :new, :to => :in_approval
+		end
+
+		event :approve do
+			transitions :from => :in_approval, :to => :accepted 
+		end
+
+		event :reject do
+			transitions :from => :in_approval, :to => :rejected
+		end
+
+		event :cancel do
+			transitions :from => [:new, :rejected], :to => :canceled
+		end
 	end
 end

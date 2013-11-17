@@ -47,6 +47,14 @@ class TimeOffsController < ApplicationController
       redirect_to employee_time_offs_url
   end
 
+
+  #STATE CONTROL
+  def change
+    @change = @employee.time_offs.find(params[:time_off_id])
+    @change.change!
+    redirect_to employee_time_offs_path, notice: 'Wysłałeś wniosek uropowy do akceptacji'
+  end
+
   private
    
     def set_time_off
