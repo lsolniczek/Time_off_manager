@@ -30,7 +30,7 @@
               <td><%= link_to image_tag("magnifier.png", :border => 0, :width => 12, :height => 12), [@employee, time_off] %></td>
               <td><%= link_to image_tag("notebook.png", :border => 0, :width => 12, :height => 12), edit_employee_time_off_path(@employee, time_off) %></td>
               <td><%= link_to image_tag("cross.png", :border => 0, :width => 12, :height => 12), [@employee, time_off], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              <td><%= link_to "zmień", employee_time_off_change_path(@employee, time_off) %></td>
+              <td><%= time_off_state_change_link(time_off) %></td>
             </tr>
           <% end %>  
         </tbody>

@@ -64,7 +64,7 @@ class TimeOff < ActiveRecord::Base
 		end
 
 		event :cancel do
-			transitions :from => [:new, :rejected], :to => :canceled
+			transitions :from => [:new, :rejected, :accepted], :to => :canceled
 		end
 	end
 end
