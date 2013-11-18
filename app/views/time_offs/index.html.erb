@@ -8,6 +8,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
+            <th></th>
             <th>Od kiedy</th>
             <th>Do kiedy</th>
             <th>Ilość dni</th>
@@ -18,10 +19,10 @@
             <th></th>
           </tr>
         </thead>
-
         <tbody>
           <% @time_offs.each do |time_off| %>
             <tr>
+              <th><%= time_off_state_ico(time_off) %></th>
               <td><%= time_off.date_from %></td>
               <td><%= time_off.date_to %></td>
               <td><%= time_off.get_day_off %></td>
