@@ -55,6 +55,25 @@ class TimeOffsController < ApplicationController
     redirect_to employee_time_offs_path, notice: 'Wysłałeś wniosek uropowy do akceptacji'
   end
 
+  def accept
+    @accept = @employee.time_offs.find(params[:time_off_id])
+    @accept.approve!
+    redirect_to employee_time_offs_path, notice: 'Twój wniosek urlopowany został zaakceotowany'
+  end
+
+  def reject
+    @reject = @employee.time_offs.find(params[:time_off_id])
+    @reject.reject!
+    redirect_to employee_time_offs_path, notice: 'Twój wniosek urlopowany został odrzucony'
+  end
+
+  def cancel
+    @cancel = @employee.time_offs.find(params[:time_off_id])
+    @cancel.cancel!
+    redirect_to employee_time_offs_path, notice: 'Twój wniosek urlopowany został anulowany'
+  end
+
+
   private
    
     def set_time_off

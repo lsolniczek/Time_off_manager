@@ -17,18 +17,18 @@ module TimeOffsHelper
 	end
 
 	#change link "/change" depend on Time off status
-	def time_off_state_change_link(single_time_off)
+	def time_off_state_change_link(employee, single_time_off)
 		case single_time_off.state
 			when "new"
-				link_to "zmień", employee_time_off_change_path(@employee, single_time_off)
+				render :partial => "time_offs/state_change/change", :locals => {employee: employee, single_time_off: single_time_off}
 			when "in_approval"
-				#TO DO
+				render :partial => "time_offs/state_change/inapproval", :locals => {employee: employee, single_time_off: single_time_off}
 			when "accepted"
-				#TO DO
+				render :partial => "time_offs/state_change/accepted", :locals => {employee: employee, single_time_off: single_time_off}
 			when "rejected"
-				#TO DO
+				render :partial => "time_offs/state_change/rejected", :locals => {employee: employee, single_time_off: single_time_off}
 			else
-				#TO DO
+				render :partial => "time_offs/state_change/canceled"
 		end
 	end
 

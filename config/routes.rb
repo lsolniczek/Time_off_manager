@@ -5,6 +5,9 @@ root 'authentication#new'
 resources :employees do
   resources :time_offs do
   	get :change
+  	get :accept
+  	get :reject
+  	get :cancel
   end
 end
 
