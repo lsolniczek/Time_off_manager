@@ -32,4 +32,20 @@ module TimeOffsHelper
 		end
 	end
 
+	#translate stante name
+	def state_name(state)
+		case state
+			when "new"
+				"Nowy"
+			when "in_approval"
+				"W akceptacji"
+			when "accepted"
+				"Zaakceptowany"
+			when "rejected"
+				"Odrzucony"
+			else
+				"Anulowany"
+		end
+	end
+
 end
