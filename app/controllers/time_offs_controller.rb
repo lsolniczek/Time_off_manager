@@ -47,6 +47,11 @@ class TimeOffsController < ApplicationController
       redirect_to employee_time_offs_url
   end
 
+  #ACCEPT TIME OFF
+  def toaccept
+    @ack_time_offs = @employee.time_offs.where(state: "in_approval")
+  end
+
 
   #STATE CONTROL
   def change

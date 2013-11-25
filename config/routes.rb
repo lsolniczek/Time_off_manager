@@ -15,5 +15,6 @@ resources :authentication, only: [:new, :create, :destroy]
 
 post 'login' => "authentication#create"
 get 'logout' => "authentication#destroy"
+get '/toaccept/:employee_id' => "time_offs#toaccept", :as => "toaccept"
 
 end

@@ -8,7 +8,7 @@
     </h1>
   </div>
   <div class="col-md-4">
-    <h3><span class="label label-info"><%= link_to "Do akceptacji", toaccept_path(@employee) %></span></h3>
+    <h3><span class="label label-info"><%= link_to "Do akceptacji" %></span></h3>
   </div>
 </div>
 <div class="row">
@@ -28,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @time_offs.each do |time_off| %>
+        <% @ack_time_offs.each do |time_off| %>
           <tr>
             <th><%= time_off_state_ico(time_off) %></th>
             <td><%= time_off.date_from %></td>
