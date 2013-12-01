@@ -6,7 +6,7 @@ require 'role'
 describe Employee do
 
 	context 'invalid employee' do
-		it 'ble ble' do 
+		it 'empty all attr' do 
 			employee = Employee.new
 			employee.valid?
 			employee.errors.count.should == 5
@@ -29,18 +29,17 @@ describe Employee do
 
 		context 'holiday off limits' do
 
-			subject(:employee) {Employee.new}
+			subject(:employee) {Employee.new(time_offs: [time_off1, time_off2])}
 			let(:time_off1) {TimeOff.new(day_off: 5)}
 			let(:time_off2) {TimeOff.new(day_off: 10)}
 
+			it {employee.time_offs.count == 2}
+
 			it 'set' do
-				employee.time_offs = [time_off1, time_off2]
 				employee.set_holiday_off_limit_used.should == 15
-				
 			end
 
 			it 'get' do
-				employee.time_offs = [time_off1, time_off2]
 				employee.set_holiday_off_limit_used
 				employee.get_holiday_off_limit_used.should == 15
 			end
