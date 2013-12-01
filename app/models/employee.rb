@@ -1,5 +1,13 @@
 class Employee < ActiveRecord::Base
+	
+	validates :first_name, :presence => true
+	validates :last_name, :presence => true
+	validates :email, :presence => true
+	validates :holiday_off_limit, :presence => true
+	validates :password, :presence => true
+
 	before_create :set_holiday_off_limit_used_to_zero
+
 	has_many :time_offs
 	has_many :employee_roles
 	has_many :roles, :through => :employee_roles
